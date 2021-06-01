@@ -40,14 +40,7 @@ const Header = ( props ) => {
                     <Grid container spacing={2} alignItems="center" justify="space-between">
                         <Grid item>
                             <a href="#top" className={ classes.logoBtn }>
-                                <Grid container spacing={2} alignItems="center">
-                                    <Grid item>
-                                        <Avatar variant="square" src="/rgbcmyfol-wbrdr-750.png" />
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography className={ classes.header } variant="h3">Neffrey</Typography>
-                                    </Grid>
-                                </Grid>
+                                <Avatar variant="square" src="/rgbcmyfol-wbrdr-750.png" />
                             </a>
                         </Grid>
                         <Grid item>

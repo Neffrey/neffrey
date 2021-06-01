@@ -41,7 +41,7 @@ const classes = useStyles()
 
     // Render Component
     return (
-        <div className={ classes.maxWidth + ' imageComponent'}>
+        <div className={ classes.maxWidth }>
             <div className={ classes.imgWrapper }>
                 <div className={ classes.img } />
             </div>

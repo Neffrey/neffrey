@@ -57,7 +57,7 @@ const developmentRow = () => {
           </Typography>
           <br />
           <Typography variant="body1">
-            Graphic design has been a hobby of mine for 15 years now. Previously I really enjoyed digital painting though that was put on the back burner in the past as my time in Photoshop and Illustrator was spent making functional art like logos and user interfaces.
+            Graphic design has been a hobby of mine for almost 15 years now. Previously I mainly worked with designers who outsourced their development to me. Though there were times when I made functional art like logos and user interfaces. After 5 years of full time freelance work, I have thrown in the towel.
           </Typography>
           <br />
           <Typography variant="body1" className={ classes.bigBottomMargin }>
