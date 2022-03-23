@@ -1,6 +1,11 @@
-import React from 'react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheets } from '@material-ui/core/styles'
+// FRAMEWORK
+import React from "react";
+// import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ColorModeScript } from "@chakra-ui/react";
+
+// THEMING
+import theme from "../theme";
 
 export default class MyDocument extends Document {
   render() {
@@ -11,11 +16,12 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
@@ -44,20 +50,18 @@ MyDocument.getInitialProps = async (ctx) => {
   // 3. app.render
   // 4. page.render
 
-  // Render app and page and get the context of the page with collected side effects.
-  const sheets = new ServerStyleSheets();
-  const originalRenderPage = ctx.renderPage;
+  // // Render app and page and get the context of the page with collected side effects.
+  // const sheets = new ServerStyleSheets();
+  // const originalRenderPage = ctx.renderPage;
 
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
-    })
+  // ctx.renderPage = () =>
+  //   originalRenderPage({
+  //     enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
+  //   })
 
   const initialProps = await Document.getInitialProps(ctx);
 
   return {
     ...initialProps,
-    // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
-  }
-}
+  };
+};

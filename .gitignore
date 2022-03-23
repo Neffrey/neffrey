@@ -33,5 +33,22 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Public Unused
-/public/unused/
+# typescript
+*.tsbuildinfo
+
+# WP Plugins
+/wp-plugins/
+
+# Design Ideas
+/designIdeas/
+
+# Crypto
+/lib/crypto.js
+/lib/keys.js
+
+# Scrapped Code
+/scrapped/
+
+
+# Roadmap
+Roadmap.txt
