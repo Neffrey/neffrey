@@ -44,7 +44,8 @@ const SlideCard = ({ frontTitle, frontImg, backContent, className }: Props) => {
         >
           {frontImg}
         </div>
-        <div className="text-xl">{frontTitle}</div>
+        <div className={"text-2xl font-semibold tracking-wider" +
+            (!hover ? " mt-5" : "")}>{frontTitle}</div> 
       </div>
       <div
         // back card
