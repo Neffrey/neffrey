@@ -38,7 +38,7 @@ const SlideCard = ({ frontTitle, frontImg, backContent, className }: Props) => {
       >
         <div
           className={
-            "aspect-square h-full fill-slate-300" +
+            "aspect-square fill-slate-300" +
             (!hover ? " w-2/3" : " h-full")
           }
         >
