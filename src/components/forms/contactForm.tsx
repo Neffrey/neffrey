@@ -35,23 +35,19 @@ const ContactForm = () => {
   // tRPC
   const sendEmailToMe = api.email.sendEmailToMe.useMutation({
     onSuccess: () => {
-      console.log("sendEmailToMe Success");
       setIsSubmitting(false);
       setIsSuccess(true);
     },
     onError: (error) => {
-      console.log("sendEmailToMe Error", error);
       setIsSubmitting(false);
     },
   });
   const sendEmailToVisitor = api.email.sendEmailToVisitor.useMutation({
     onSuccess: () => {
-      console.log("sendEmailToVisitor Success");
       setIsSubmitting(false);
       setIsSuccess(true);
     },
     onError: (error) => {
-      console.log("sendEmailToVisitor Error", error);
       setIsSubmitting(false);
     },
   });
@@ -123,15 +119,10 @@ const ContactForm = () => {
           type="submit"
           value="Send Message"
           className="btn-accent btn w-full text-lg font-semibold tracking-wider text-white"
+          disabled={isSubmitting}
         />
-        <div className="p-2" />
-        <button
-          className="text-md btn-accent btn w-full font-semibold tracking-wider text-white"
-          onClick={() => console.log("Log Bools", { isSubmitting })}
-        >
-          Log Bools:
-        </button>
       </form>
+      {/* Error Messages */}
     </>
   );
 };

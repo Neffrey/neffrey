@@ -11,7 +11,6 @@ export const emailRouter = createTRPCRouter({
   sendEmailToVisitor: publicProcedure
     .input(z.object({ email: schema.email, message: schema.message }))
     .mutation(async ({ input }) => {
-      console.log("sendEmailToVisitor reached");
       return await axios
         .post(`${env.NEXT_PUBLIC_SMTP2GO_API_URL}email/send`, {
           api_key: env.NEXT_PUBLIC_SMTP2GO_API_KEY,
@@ -26,16 +25,15 @@ export const emailRouter = createTRPCRouter({
           ],
         })
         .then((response) => {
-          console.log("sendEmailToVisitor success response", response);
+          console.log("sendEmailToVisitor success");
         })
         .catch((error) => {
-          console.log("sendEmailToVisitor error response", error);
+          console.log("sendEmailToVisitor error");
         });
     }),
   sendEmailToMe: publicProcedure
     .input(z.object({ email: schema.email, message: schema.message }))
     .mutation(async ({ input }) => {
-      console.log("sendEmailToMe reached");
       return await axios
         .post(`${env.NEXT_PUBLIC_SMTP2GO_API_URL}email/send`, {
           api_key: env.NEXT_PUBLIC_SMTP2GO_API_KEY,
@@ -53,10 +51,10 @@ export const emailRouter = createTRPCRouter({
           ],
         })
         .then((response) => {
-          console.log("sendEmailToVisitor success response", response);
+          console.log("sendEmailToVisitor success");
         })
         .catch((error) => {
-          console.log("sendEmailToVisitor error response", error);
+          console.log("sendEmailToVisitor error");
         });
     }),
 });
