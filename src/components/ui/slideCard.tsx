@@ -17,11 +17,17 @@ type Props = {
 const SlideCard = ({ frontTitle, frontImg, backContent, className }: Props) => {
   // STATE
   const [hover, setHover] = useState(false);
+  const [stickyHover, setStickyHover] = useState(false);
   return (
     <div
       // card wrapper
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onMouseEnter={() => {
+        if (!stickyHover) setHover(true);
+      }}
+      onMouseLeave={() => {
+        if (!stickyHover) setHover(false);
+      }}
+      onClick={() => setStickyHover(!stickyHover)}
       className={
         "relative z-10 box-border h-full min-h-[300px] w-full cursor-pointer overflow-hidden rounded-xl shadow-xl" +
         addClassName(className)
@@ -38,14 +44,18 @@ const SlideCard = ({ frontTitle, frontImg, backContent, className }: Props) => {
       >
         <div
           className={
-            "aspect-square fill-slate-300" +
-            (!hover ? " w-2/3" : " h-full")
+            "aspect-square fill-slate-300" + (!hover ? " w-2/3" : " h-full")
           }
         >
           {frontImg}
         </div>
-        <div className={"text-2xl font-semibold tracking-wider" +
-            (!hover ? " mt-5" : "")}>{frontTitle}</div> 
+        <div
+          className={
+            "text-2xl font-semibold tracking-wider" + (!hover ? " mt-5" : "")
+          }
+        >
+          {frontTitle}
+        </div>
       </div>
       <div
         // back card

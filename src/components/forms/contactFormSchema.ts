@@ -18,7 +18,7 @@ export const schema = {
     .string()
     .email({
       message:
-        "Please enter a valid email address you want me to contact you at",
+        "Please enter a valid email address",
     })
     .max(50, { message: "Must be 50 characters or less" }),
   message: z

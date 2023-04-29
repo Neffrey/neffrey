@@ -71,6 +71,9 @@ const ContactForm = () => {
       sendEmailToVisitor.mutate(getValues());
       setIsSubmitting(true);
     }
+    if (errors.email) {
+      setFocus("email");
+    }
   };
 
   if (isSuccess) return <ContactFormSuccess />;
@@ -86,11 +89,19 @@ const ContactForm = () => {
           className="w-full pb-1 text-lg lowercase tracking-wider"
         >
           {`Email address`}
+          {errors.email?.message ? (
+            <p className="text-sm text-error">{errors?.email?.message}</p>
+          ) : null}
         </label>
         <input
           type="text"
           placeholder="Enter your email address"
-          className="w-full rounded-md p-2 text-base text-black placeholder-black/80"
+          className={
+            "w-full rounded-md p-2 text-base text-black placeholder-black/80" +
+            (errors?.email?.message
+              ? " border-2 border-y-4 border-solid border-error"
+              : "")
+          }
           {...register("email", {
             onBlur: (event: FocusEvent<HTMLInputElement>) =>
               validateField(event.target.name as SchemaKey, event.target.value),
