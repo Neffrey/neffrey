@@ -114,10 +114,18 @@ const ContactForm = () => {
           className="w-full pb-1 text-lg lowercase tracking-wider"
         >
           {`Message`}
+          {errors.message?.message ? (
+            <p className="text-sm text-error">{errors?.message?.message}</p>
+          ) : null}
         </label>
         <textarea
           placeholder="Send me a quick message letting me know what you wanna chat about. I'll get back to ya :)"
-          className="w-full min-w-full rounded-md p-2 text-base text-black placeholder-black/80"
+          className={
+            "w-full min-w-full rounded-md p-2 text-base text-black placeholder-black/80" +
+            (errors?.message?.message
+              ? " border-2 border-y-4 border-solid border-error"
+              : "")
+          }
           rows={5}
           maxLength={MESSAGE_MAX_LENGTH}
           {...register("message", {
