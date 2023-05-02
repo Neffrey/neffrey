@@ -12,15 +12,15 @@ export const emailRouter = createTRPCRouter({
     .input(z.object({ email: schema.email, message: schema.message }))
     .mutation(async ({ input }) => {
       return await axios
-        .post(`${env.NEXT_PUBLIC_SMTP2GO_API_URL}email/send`, {
-          api_key: env.NEXT_PUBLIC_SMTP2GO_API_KEY,
+        .post(`${env.SMTP2GO_API_URL}email/send`, {
+          api_key: env.SMTP2GO_API_KEY,
           to: [`<${input.email}>`],
-          sender: `Neffrey <${env.NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL}>`,
+          sender: `Neffrey <${env.SMTP2GO_SENDER_EMAIL}>`,
           template_id: "5279818",
           custom_headers: [
             {
               header: "Reply-To",
-              value: `Neffrey <${env.NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL}>`,
+              value: `Neffrey <${env.SMTP2GO_SENDER_EMAIL}>`,
             },
           ],
         })
@@ -35,10 +35,10 @@ export const emailRouter = createTRPCRouter({
     .input(z.object({ email: schema.email, message: schema.message }))
     .mutation(async ({ input }) => {
       return await axios
-        .post(`${env.NEXT_PUBLIC_SMTP2GO_API_URL}email/send`, {
-          api_key: env.NEXT_PUBLIC_SMTP2GO_API_KEY,
-          to: [`<${env.NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL}>`],
-          sender: `Neffrey <${env.NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL}>`,
+        .post(`${env.SMTP2GO_API_URL}email/send`, {
+          api_key: env.SMTP2GO_API_KEY,
+          to: [`<${env.SMTP2GO_SENDER_EMAIL}>`],
+          sender: `Neffrey <${env.SMTP2GO_SENDER_EMAIL}>`,
           template_id: "1666319",
           template_data: {
             message: input.message,
@@ -46,7 +46,7 @@ export const emailRouter = createTRPCRouter({
           custom_headers: [
             {
               header: "Reply-To",
-              value: `Neffrey <${env.NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL}>`,
+              value: `Neffrey <${env.SMTP2GO_SENDER_EMAIL}>`,
             },
           ],
         })

@@ -15,9 +15,9 @@ const server = z.object({
 const client = z.object({
   NEXTAUTH_SECRET: z.string().min(1),
   NEXTAUTH_URL: z.string().min(1),
-  NEXT_PUBLIC_SMTP2GO_API_URL: z.string().min(1),
-  NEXT_PUBLIC_SMTP2GO_API_KEY: z.string().min(1),
-  NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL: z.string().min(1),
+  SMTP2GO_API_URL: z.string().min(1),
+  SMTP2GO_API_KEY: z.string().min(1),
+  SMTP2GO_SENDER_EMAIL: z.string().min(1),
 });
 
 /**
@@ -30,10 +30,10 @@ const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
   NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-  NEXT_PUBLIC_SMTP2GO_API_URL: process.env.NEXT_PUBLIC_SMTP2GO_API_URL,
-  NEXT_PUBLIC_SMTP2GO_API_KEY: process.env.NEXT_PUBLIC_SMTP2GO_API_KEY,
-  NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL:
-    process.env.NEXT_PUBLIC_SMTP2GO_SENDER_EMAIL,
+  SMTP2GO_API_URL: process.env.SMTP2GO_API_URL,
+  SMTP2GO_API_KEY: process.env.SMTP2GO_API_KEY,
+  SMTP2GO_SENDER_EMAIL:
+    process.env.SMTP2GO_SENDER_EMAIL,
 };
 
 // Don't touch the part below
