@@ -33,6 +33,7 @@ const Home: NextPage = () => {
         <title>{"Oh hai <3 Neffrey"}</title>
         <meta name="description" content="Oh hai <3 Neffrey" />
         <link rel="icon" href="/CircleLogoIco.ico" />
+        <meta property="og:image" content="/CircleLogo.png" />
       </Head>
 
       <main
