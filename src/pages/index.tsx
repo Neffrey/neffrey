@@ -12,7 +12,7 @@ import ReactJSLogo from "~/components/svgs/reactjsLogo";
 import ContactForm from "~/components/forms/contactForm";
 import SlideCard from "~/components/ui/slideCard";
 import NextJsLogo from "~/components/svgs/nextjsLogo";
-import PrismaLogo from "~/components/svgs/prismaLogo";
+import DrizzleLog from "~/components/svgs/drizzleLogo";
 
 // COMPONENT
 const Home: NextPage = () => {
@@ -281,9 +281,9 @@ const Home: NextPage = () => {
               />
               <SlideCard
                 className="rounded-lg shadow-xl"
-                frontTitle="Prisma"
-                frontImg={<PrismaLogo className="text-lg" />}
-                backContent="A modern and powerful tool that simplifies database access
+                frontTitle="Drizzle"
+                frontImg={<DrizzleLog className="text-lg" />}
+                backContent="A modern and powerful tool that simplifies database SQL access
                     and manipulation. It provides a type-safe and seamless
                     integration with various database systems."
               />
