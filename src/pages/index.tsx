@@ -281,7 +281,7 @@ const Home: NextPage = () => {
               />
               <SlideCard
                 className="rounded-lg shadow-xl"
-                frontTitle="Drizzle"
+                frontTitle="Drizzle ORM"
                 frontImg={<DrizzleLogo className="text-lg" />}
                 backContent="A modern and powerful tool that provides a type-safe and seamless database SQL access
                     and manipulation."
