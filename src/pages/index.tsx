@@ -12,7 +12,7 @@ import ReactJSLogo from "~/components/svgs/reactjsLogo";
 import ContactForm from "~/components/forms/contactForm";
 import SlideCard from "~/components/ui/slideCard";
 import NextJsLogo from "~/components/svgs/nextjsLogo";
-import DrizzleLog from "~/components/svgs/drizzleLogo";
+import DrizzleLogo from "~/components/svgs/drizzleLogo";
 
 // COMPONENT
 const Home: NextPage = () => {
@@ -267,7 +267,7 @@ const Home: NextPage = () => {
               <SlideCard
                 className="rounded-lg shadow-xl"
                 frontTitle="ReactJS"
-                frontImg={<ReactJSLogo className="mt-1 text-lg" />}
+                frontImg={<ReactJSLogo className="text-lg" />}
                 backContent="The powerhouse component based JavaScript library used for
                     building dynamic and interactive user interfaces."
               />
@@ -282,10 +282,9 @@ const Home: NextPage = () => {
               <SlideCard
                 className="rounded-lg shadow-xl"
                 frontTitle="Drizzle"
-                frontImg={<DrizzleLog className="text-lg" />}
-                backContent="A modern and powerful tool that simplifies database SQL access
-                    and manipulation. It provides a type-safe and seamless
-                    integration with various database systems."
+                frontImg={<DrizzleLogo className="text-lg" />}
+                backContent="A modern and powerful tool that provides a type-safe and seamless database SQL access
+                    and manipulation."
               />
             </div>
           </div>
