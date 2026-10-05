@@ -1,6 +1,7 @@
 // LIBRARIES
 import React from "react";
 import { type AppType } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 
 // COMPONENTS
 import Header from "~/components/templates/header";
@@ -16,6 +17,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Header />
       <Component {...pageProps} />
       <Footer />
+      <Analytics />
     </>
   );
 };
